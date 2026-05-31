@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مطعم السلاطين - فخامة المذاق</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-utensils"></i> مطعم <span>السلاطين</span>
+            </a>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">الرئيسية</a></li>
+                    <li><a href="#about">من نحن</a></li>
+                    <li><a href="#menu">قائمة الطعام</a></li>
+                    <li><a href="#contact">تواصل معنا</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <div class="cart-icon" id="cart-btn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <div class="menu-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cart Sidebar / Modal -->
+    <div class="cart-overlay" id="cart-overlay">
+        <div class="cart-sidebar">
+            <div class="cart-header">
+                <h3><i class="fa-solid fa-cart-shopping"></i> سلة الطلبات</h3>
+                <button class="close-cart" id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <!-- Items will be injected here -->
+                <div class="empty-cart">السلة فارغة حالياً</div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>الإجمالي:</span>
+                    <span id="cart-total-price">0 ر.س</span>
+                </div>
+                <div class="checkout-options">
+                    <button class="btn btn-primary btn-block" onclick="alert('تم تحويلك لصفحة الدفع كزائر.')">متابعة كزائر</button>
+                    <button class="btn btn-outline btn-block" onclick="alert('جاري التحويل لصفحة تسجيل الدخول...')">تسجيل الدخول</button>
+                    <div class="hotline-container">
+                        <span>أو اطلب عبر الهاتف:</span>
+                        <a href="tel:19000" class="btn btn-hotline btn-block"><i class="fa-solid fa-phone"></i> الخط الساخن: 19000</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="fade-in-up">تذوق الفخامة في كل قضمة</h1>
+            <p class="fade-in-up delay-1">نقدم لكم أشهى البيتزا، السندوتشات، الفطائر والشاورما المحضرة بأجود المكونات الطازجة.</p>
+            <a href="#menu" class="btn btn-primary fade-in-up delay-2">استعرض المنيو <i class="fa-solid fa-arrow-left"></i></a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>من <span>نحن</span></h2>
+                <p>تجربة طعام لا تُنسى تجمع بين الأصالة والابتكار</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text slide-in-right">
+                    <h3>أكثر من مجرد مطعم.. شغف بالتميز</h3>
+                    <p>في مطعم السلاطين، نؤمن بأن الطعام هو لغة الحب، ولذلك نحرص على تقديم أفضل ما لدينا لضيوفنا الكرام. طهاتنا محترفون يمتلكون خبرة واسعة في إعداد أشهى الأطباق التي تلبي كافة الأذواق.</p>
+                    <ul class="features-list">
+                        <li><i class="fa-solid fa-check"></i> مكونات طازجة يومياً</li>
+                        <li><i class="fa-solid fa-check"></i> خدمة استثنائية وسريعة</li>
+                        <li><i class="fa-solid fa-check"></i> أجواء فخمة ومريحة</li>
+                    </ul>
+                </div>
+                <div class="about-image slide-in-left">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=800" alt="Restaurant Interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu section-padding bg-darker">
+        <div class="container">
+            <div class="section-title">
+                <h2>قائمة <span>الطعام</span></h2>
+                <p>اكتشف تشكيلتنا الواسعة من الأطباق اللذيذة</p>
+            </div>
+
+            <!-- Menu Categories -->
+            <div class="menu-categories">
+                <button class="filter-btn active" data-filter="all">الكل</button>
+                <button class="filter-btn" data-filter="pizza">بيتزا</button>
+                <button class="filter-btn" data-filter="sandwiches">سندوتشات</button>
+                <button class="filter-btn" data-filter="pies">فطائر</button>
+                <button class="filter-btn" data-filter="shawarma">شاورما</button>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="menu-grid">
+                
+                <!-- Pizza Item -->
+                <div class="menu-item mix pizza">
+                    <div class="item-img">
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&q=80&w=600" alt="Pizza Margherita">
+                        <span class="price">45 ر.س</span>
+                    </div>
+                    <div class="item-info">
+                        <h3>بيتزا مارجريتا الفاخرة</h3>
+                        <p>عجينة رقيقة، صوص طماطم طازج، جبن الموزاريلا، وريحان.</p>
+                        <button class="btn btn-outline add-to-cart-btn" data-id="p1" data-name="بيتزا مارجريتا الفاخرة" data-price="45">أضف للطلب</button>
+                    </div>
+                </div>
+
+                <!-- Pizza Item -->
+                <div class="menu-item mix pizza">
+                    <div class="item-img">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&q=80&w=600" alt="Pepperoni Pizza">
+                        <span class="price">55 ر.س</span>
+                    </div>
+                    <div class="item-info">
+                        <h3>بيتزا بيبروني السلاطين</h3>
+                        <p>بيبروني بقري، جبنة موزاريلا مضاعفة، وصوصنا السري.</p>
+                        <button class="btn btn-outline add-to-cart-btn" data-id="p2" data-name="بيتزا بيبروني السلاطين" data-price="55">أضف للطلب</button>
+                    </div>
+                </div>
+
+                <!-- Sandwich Item -->
+                <div class="menu-item mix sandwiches">
+                    <div class="item-img">
+                        <img src="https://images.unsplash.com/photo-1561043433-aaf687c4ce04?auto=format&fit=crop&q=80&w=600" alt="Club Sandwich">
+                        <span class="price">35 ر.س</span>
+                    </div>
+                    <div class="item-info">
+                        <h3>كلوب ساندوتش ملكي</h3>
+                        <p>دجاج مشوي، لحم رومي مدخن، بيض، خس، مايونيز في خبز محمص.</p>
+                        <button class="btn btn-outline add-to-cart-btn" data-id="s1" data-name="كلوب ساندوتش ملكي" data-price="35">أضف للطلب</button>
+                    </div>
+                </div>
+
+                <!-- Sandwich Item -->
+                <div class="menu-item mix sandwiches">
+                    <div class="item-img">
+                        <img src="https://images.unsplash.com/photo-1553909489-cd47ce7f09a9?auto=format&fit=crop&q=80&w=600" alt="Burger">
+                        <span class="price">40 ر.س</span>
+                    </div>
+                    <div class="item-info">
+                        <h3>برجر لحم فاخر</h3>
+                        <p>شريحة لحم واغيو، جبنة شيدر معتقة، بصل مكرمل، وصوص الترفل.</p>
+                        <button class="btn btn-outline add-to-cart-btn" data-id="s2" data-name="برجر لحم فاخر" data-price="40">أضف للطلب</button>
+                    </div>
+                </div>
+
+                <!-- Pie Item -->
+                <div class="menu-item mix pies">
+                    <div class="item-img">
+                        <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&q=80&w=600" alt="Meat Pie">
+                        <span class="price">25 ر.س</span>
+                    </div>
+                    <div class="item-info">
+                        <h3>فطيرة اللحم بالعجين</h3>
+                        <p>عجينة هشة محشوة باللحم المفروم الطازج، الصنوبر والبهارات الشامية.</p>
+                        <button class="btn btn-outline add-to-cart-btn" data-id="pi1" data-name="فطيرة اللحم بالعجين" data-price="25">أضف للطلب</button>
+                    </div>
+                </div>
+                
+                <!-- Pie Item -->
+                <div class="menu-item mix pies">
+                    <div class="item-img">
+                        <img src="https://images.unsplash.com/photo-1621300977243-d34e9e0a0d5c?auto=format&fit=crop&q=80&w=600" alt="Cheese Pie">
+                        <span class="price">20 ر.س</span>
+                    </div>
+                    <div class="item-info">
+                        <h3>فطيرة الأجبان الأربعة</h3>
+                        <p>مزيج غني من موزاريلا، عكاوي، حلوم، وشيدر مع حبة البركة.</p>
+                        <button class="btn btn-outline add-to-cart-btn" data-id="pi2" data-name="فطيرة الأجبان الأربعة" data-price="20">أضف للطلب</button>
+                    </div>
+                </div>
+
+                <!-- Shawarma Item -->
+                <div class="menu-item mix shawarma">
+                    <div class="item-img">
+                        <img src="https://images.unsplash.com/photo-1615719417386-b4845ec260f8?auto=format&fit=crop&q=80&w=600" alt="Chicken Shawarma">
+                        <span class="price">15 ر.س</span>
+                    </div>
+                    <div class="item-info">
+                        <h3>شاورما دجاج كلاسيك</h3>
+                        <p>دجاج متبل على السيخ، ثومية، مخلل، وبطاطس مقلية في خبز صاج.</p>
+                        <button class="btn btn-outline add-to-cart-btn" data-id="sh1" data-name="شاورما دجاج كلاسيك" data-price="15">أضف للطلب</button>
+                    </div>
+                </div>
+
+                <!-- Shawarma Item -->
+                <div class="menu-item mix shawarma">
+                    <div class="item-img">
+                        <img src="https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&q=80&w=600" alt="Meat Shawarma">
+                        <span class="price">18 ر.س</span>
+                    </div>
+                    <div class="item-info">
+                        <h3>شاورما لحم مخصوص</h3>
+                        <p>شرائح لحم طرية، طحينة، بصل وبقدونس، طماطم في خبز عربي.</p>
+                        <button class="btn btn-outline add-to-cart-btn" data-id="sh2" data-name="شاورما لحم مخصوص" data-price="18">أضف للطلب</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container footer-content">
+            <div class="footer-box">
+                <h3>مطعم السلاطين</h3>
+                <p>نقدم لكم أفضل تجربة طعام بلمسة من الفخامة والرقي. نحن نهتم بأدق التفاصيل لضمان رضاكم.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-snapchat"></i></a>
+                </div>
+            </div>
+            <div class="footer-box">
+                <h3>روابط سريعة</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#about">من نحن</a></li>
+                    <li><a href="#menu">قائمة الطعام</a></li>
+                    <li><a href="#contact">تواصل معنا</a></li>
+                </ul>
+            </div>
+            <div class="footer-box">
+                <h3>تواصل معنا</h3>
+                <ul class="contact-info">
+                    <li><i class="fa-solid fa-location-dot"></i> شارع التحلية، الرياض، المملكة العربية السعودية</li>
+                    <li><i class="fa-solid fa-phone"></i> +966 50 123 4567</li>
+                    <li><i class="fa-solid fa-envelope"></i> info@sultanrestaurant.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 مطعم السلاطين. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+</body>
+</html>
